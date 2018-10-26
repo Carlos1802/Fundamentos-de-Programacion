@@ -1,0 +1,41 @@
+
+
+//Carlos Alberto Camacho Caballero
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+int MCD(int a,int b);
+
+void main()
+{
+	int numerador, denominador, simplificacion, simplificacion;
+
+	cout<<"Ingrese el numerador de la fraccion."<<endl;
+	cin>>numerador;
+	cout<<"Ingrese el denominador."<<endl;
+	cin>>denominador;
+	simplificacion = MCD(numerador,denominador);
+	numerador=numerador/simplificacion;
+	denominador=denominador/simplificacion;
+	cout<<"Su fraccion simplificada es: "<<numerador<<"/"<<denominador<<endl;
+	getch();
+}
+int MCD(int a, int b)
+{
+	int A, B, suma;
+	do{
+		if(A>B)
+		{
+			suma=A-B;
+			A=suma;
+		}else{
+			suma=B-A;
+			B=suma;
+		}
+	}while(A!=B);
+	return A;
+}

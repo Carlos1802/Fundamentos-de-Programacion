@@ -1,0 +1,103 @@
+
+/*
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+
+using namespace std;
+
+int Npalabras(string frase);
+int Nvocales(string frase);
+
+void main()
+{
+	string frase;
+	int palabras, vocales, consonantes=0, lon;
+
+	cout<<"Ingrese su frase para el calculo."<<endl;
+	getline(cin,frase);
+	lon= frase.length();
+	
+	palabras = Npalabras(frase);
+
+	vocales = Nvocales(frase);
+
+    consonantes= lon-vocales-1; 
+
+	cout<<"La cantidad de palabras es: "<<palabras<<endl;
+	cout<<"La cantidad de vocales es: "<<vocales<<endl;
+	cout<<"La cantidad de consonantes es: "<<consonantes<<endl;
+
+	getch();
+}
+
+int Nvocales(string frase)
+{
+	int voc=0, longitud;
+	longitud = frase.length();
+
+	for(int i=0; i<longitud; i++)
+		if(frase.at(i)=='a' || frase.at(i)=='e' || frase.at(i)=='i' || frase.at(i)=='o' || frase.at(i)=='u')
+			voc++;
+	return voc;
+}
+
+int Npalabras(string frase)
+{
+	int pal=0, longitud, espacio=0;
+	longitud=frase.length();
+
+	for(int i=0; i<longitud; i++)
+		if(frase.at(i)==' ')
+			espacio++;
+
+	pal=espacio + 1;
+
+	return pal;
+}
+*/
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+
+void cargar(double vec[], int tamano);
+int buscar( double vec[], int tamano, int x);
+
+
+void main()
+{
+	double vec[MAX];
+	int tamano, ubicacion, x;
+	cout<<"Ingrese el tamano de su vector."<<endl;
+	cin>>tamano;
+	cout<<"Ingrese el valor que desea buscar."<<endl;
+	cin>>x;
+	cargar(vec,tamano);
+	ubicacion = buscar(vec, tamano, x);
+	
+	getch();
+}
+
+void cargar(double vec[], int tamano)
+{
+	for(int i=0; i<tamano, i++)
+	{
+		cout<<"a["<<i<<"]= ";
+		cin>> vec[i];
+	}
+}
+
+int buscar(double vec[], int tamano, int x)
+{
+	for(int i=0; i<tamano; i++)
+		vec[i]==x;
+
+		
+
+
+

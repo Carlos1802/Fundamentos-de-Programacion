@@ -1,5 +1,4 @@
 
-
 //Carlos Alberto Camacho Caballero
 
 #include "stdafx.h"
@@ -8,34 +7,51 @@
 
 using namespace std;
 
-int MCD(int a,int b);
+int MCD(int a, int b);
 
 void main()
 {
-	int numerador, denominador, simplificacion, simplificacion;
+	int a,b,numerador,denominador, divisor;
 
-	cout<<"Ingrese el numerador de la fraccion."<<endl;
-	cin>>numerador;
+	cout<<"Ingrese su fraccion para simplificar."<<endl;
+	cout<<"Ingrese el numerador."<<endl;
+	cin>>a;
 	cout<<"Ingrese el denominador."<<endl;
-	cin>>denominador;
-	simplificacion = MCD(numerador,denominador);
-	numerador=numerador/simplificacion;
-	denominador=denominador/simplificacion;
-	cout<<"Su fraccion simplificada es: "<<numerador<<"/"<<denominador<<endl;
-	getch();
+	cin>>b;
+
+	divisor = MCD(a,b);
+
+	numerador = a/divisor;
+	denominador = b/divisor;
+
+	if(denominador==1)
+	{
+		cout<<"La fraccion simplificada es:"<<numerador<<endl;
+	}
+	else
+	{
+		cout<<"La fraccion simplificada es:"<<numerador<<"/"<<denominador<<endl;
+	}
+		getch();
 }
+
 int MCD(int a, int b)
 {
-	int A, B, suma;
+	int suma;
+	
 	do{
-		if(A>B)
+		if(a<b)
 		{
-			suma=A-B;
-			A=suma;
-		}else{
-			suma=B-A;
-			B=suma;
+			suma=b-a;
+			b=suma;
 		}
-	}while(A!=B);
-	return A;
+		else
+		{
+			suma=a-b;
+			a=suma;
+		}
+	}while(a!=b);
+
+	return a;
 }
+

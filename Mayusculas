@@ -1,0 +1,45 @@
+
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+
+using namespace std;
+
+void mayusculas(string palabra);
+void minusculas(string palabra);
+
+void main()
+{
+	string palabra;
+
+	cout<<"Ingrese su palabra."<<endl;
+	getline(cin,palabra);
+
+	mayusculas(palabra);
+	getch();
+}
+
+void mayusculas(string palabra)
+{
+	int longitud;
+
+	longitud = palabra.length();
+
+	for(int i=0;i<longitud;i++)
+		palabra[i] = toupper(palabra[i]);
+
+	cout<<"la palabra en mayusculas es:"<<palabra<<endl;
+}
+
+void minusculas(string palabra)
+{
+	int longitud;
+
+	longitud = palabra.length();
+
+	for(int i=0;i<longitud;i++)
+		palabra[i] = tolower(palabra[i]);
+	cout<<"La palabra en minusculas es:"<<palabra<<endl;
+}

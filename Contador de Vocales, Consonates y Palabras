@@ -1,0 +1,76 @@
+
+// Carlos Alberto Camacho Caballero
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+
+using namespace std;
+
+int consonante(string frase);
+int vocal(string frase);
+int palabra(string frase);
+
+void main()
+{
+	string frase;
+	int vocales, consonantes, palabras;
+	
+	cout<<"Ingrese su frase."<<endl;
+	getline(cin,frase);
+
+	vocales = vocal(frase);
+	consonantes = consonante(frase);
+	palabras = palabra(frase);
+
+	cout<<"La cantidad de vocales es: "<<vocales<<endl;
+	cout<<"La cantidad de consonantes es: "<<consonantes<<endl;
+	cout<<"La cantidad de palabras es: "<<palabras<<endl;
+
+	getch();
+}
+
+int vocal(string frase)
+{
+	int longitud, voc;
+	longitud = frase.length();
+	voc = 0;
+
+	for(int i=0;i<longitud;i++)
+	{
+		if(frase.at(i)=='a' || frase.at(i)=='e' || frase.at(i)=='i' || frase.at(i)=='o' || frase.at(i)=='u')
+			voc++;
+	}
+	return voc;
+}
+
+int consonante(string frase)
+{
+	int longitud, con;
+	longitud = frase.length();
+	con = 0;
+	
+	for(int i=0;i<longitud;i++)
+		{
+			if(frase.at(i)!='a' && frase.at(i)!='e' && frase.at(i)!='i' && frase.at(i)!='o' && frase.at(i)!='u' && frase.at(i)!=' ')
+			con++;
+	    }
+	return con;
+}
+
+int palabra(string frase)
+{
+	int longitud, espacio, pal;
+	longitud = frase.length();
+	espacio = 0;
+
+	for(int i=0;i<longitud;i++)
+	{
+		if(frase.at(i)==' ')
+			espacio++;
+	}
+	pal = espacio + 1;
+	return pal;
+}
+

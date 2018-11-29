@@ -1,0 +1,88 @@
+
+//Carlos Alberto Camacho Caballero
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+#define MAXF 20
+#define MAXC 20
+
+using namespace std;
+
+void cargar(double matriz[MAXF][MAXC], int fila, int columna);
+void intercambiar(int matriz[MAXF][MAXC],int fila,int columna);
+
+
+void main()
+{
+	int opcion, fila, columna;
+	double matriz[MAXF][MAXC], P[100000];
+
+	do{
+		cout<<"Ingrese el numero de filas de la matriz."<<endl;
+		cin>>fila;
+	}while(fila<1 || fila>MAXF);
+
+	do{
+		cout<<"Ingrese el numero de columnas de la matriz"<<endl;
+		cin>>columna;
+	}while(columna<1 || columna>MAXC);
+	do{
+
+	cout<<"----------MENU----------"<<endl;
+	cout<<"Elija la opcion que desea realizar."<<endl;
+	cout<<"1.Cargar"<<endl;
+	cout<<"2.Obtener promedio de filas y columnas."<<endl;
+	cout<<"0.Salir"<<endl;
+	cin>>opcion;
+
+		switch(opcion)
+		{
+		case 1:
+			cargar(matriz,fila,columna);break;
+		case 2:
+			
+		case 0:
+			cout<<"Saliendo."<<endl;break;
+		default:
+			cout<<"Opcion Erronea."<<endl;break;
+		}
+	}while(opcion!=0);
+	getch();
+}
+
+void cargar(double matriz[MAXF][MAXC],int fila, int columna)
+{int i, j;
+ 
+  for(i=0;i<fila;i++)
+   for(j=0;j<columna;j++)
+     {
+		 cout<<"MAT ["<<i<<"] ["<<j<<"]: ";
+		 cin>>matriz[i][j];
+     }
+}
+
+void intercambiar(int matriz[MAXF][MAXC],int fila,int columna)
+{
+	float aux;
+	for(int i=0;i<fila;i++)
+	{
+		aux = matriz[fila-1][i];
+		matriz[fila-1][i] = matriz[fila-1][i];
+		matriz[fila -2][i] = aux;
+	}
+}
+
+void mostrar(int matriz[MAXF][MAXC],int fila)
+{
+	for(int i=0;i<fila;i++)
+	{
+		for(int j=0;j<fila;j++)
+		{
+			cout<<matriz[i][j];
+			cout<<endl;
+		}
+	}
+}
+

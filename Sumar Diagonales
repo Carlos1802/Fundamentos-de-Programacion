@@ -1,0 +1,91 @@
+
+
+//Carlos Alberto Camacho Caballero
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+#define MAXF 20
+#define MAXC 20
+
+using namespace std;
+
+void cargar(double matriz[MAXF][MAXC], int fila, int columna);
+void sumardiagonal(double matriz[MAXF][MAXC],int fila,int columna);
+
+
+void main()
+{
+	int opcion, fila, columna;
+	double matriz[MAXF][MAXC];
+
+	do{
+		cout<<"Ingrese el numero de filas de la matriz."<<endl;
+		cin>>fila;
+	}while(fila<1 || fila>MAXF);
+
+	do{
+		cout<<"Ingrese el numero de columnas de la matriz"<<endl;
+		cin>>columna;
+	}while(columna<1 || columna>MAXC);
+	do{
+
+	cout<<"----------MENU----------"<<endl;
+	cout<<"Elija la opcion que desea realizar."<<endl;
+	cout<<"1.Cargar"<<endl;
+	cout<<"2.Sumar la diagonal de una Matriz."<<endl;
+	cout<<"0.Salir"<<endl;
+	cin>>opcion;
+
+		switch(opcion)
+		{
+		case 1:
+			cargar(matriz,fila,columna);break;
+		case 2: 
+			sumardiagonal(matriz,fila,columna);break;	
+		case 0:
+			cout<<"Saliendo."<<endl;break;
+		default:
+			cout<<"Opcion Erronea."<<endl;break;
+		}
+	}while(opcion!=0);
+	getch();
+}
+
+void cargar(double matriz[MAXF][MAXC],int fila, int columna)
+{int i, j;
+ 
+  for(i=0;i<fila;i++)
+   for(j=0;j<columna;j++)
+     {
+		 cout<<"MAT ["<<i<<"] ["<<j<<"]: ";
+		 cin>>matriz[i][j];
+     }
+}
+
+void sumardiagonal(double matriz[MAXF][MAXC],int fila, int columna)
+{
+	int suma1=0, suma2=0, sumat;
+
+	for(int i=0;i<fila;i++)
+	{
+		for(int j=0;j<fila,j++)
+		{
+			if(i==j)
+				suma1=suma1 + matriz[i][j];
+		}
+	}
+	for(int fil=0;fil<fila;fil++)
+	{
+		for(int col=0;col<fila;col++)
+		{
+			if(col==fila-fil)
+				suma2=suma2 + matriz[fil][col];
+		}
+	}
+	sumat = suma1 + suma2;
+	cout<<"La suma de diagonales es: "<<sumat<<endl;
+}
+
+

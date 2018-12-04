@@ -1,0 +1,67 @@
+
+//Carlos Alberto Camacho Caballero
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+
+using namespace std;
+
+int ingresar();
+int cifras(int n);
+void digitos(int n,int cifras);
+
+void main()
+{
+	int numero, ncifras;
+	numero = ingresar();
+	ncifras = cifras(numero);
+	digitos(numero,ncifras);
+	_getch();
+}
+
+int ingresar()
+{
+	int n;
+	cout<<"Ingrese su numero."<<endl;
+	cin>>n;
+	return n;
+}
+
+int cifras(int n)
+{
+	int digs=0;
+
+	do{
+		n = n/10;
+		digs++;
+
+	}while(n>0);
+	
+	return digs;
+}
+
+void digitos(int n, int cifras)
+{
+	int dig[MAX], digs[MAX];
+
+	do{
+		for(int i=0;i<cifras;i++)
+		{
+			dig[i] = n%10;
+			n = n/10;
+		}
+	}while(n>0);
+	
+	for(int j=0;j<cifras;j++)
+	{
+		digs[j] = dig[cifras-1-j];
+	}
+	for(int k=0;k<cifras;k++)
+		{
+			cout<< "Digito["<< k << "]=";
+			cout<< digs[k]<<endl;
+		}
+	cout<<"La cantidad de cifras es:"<< cifras<<endl;
+}

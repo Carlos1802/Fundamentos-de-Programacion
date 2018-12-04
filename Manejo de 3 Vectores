@@ -1,0 +1,95 @@
+
+//Carlos Alberto Camacho Caballero
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#define MAX 100
+using namespace std;
+
+void cargar(int vec[],int tam);
+void mostrar(int vec[],int tam);
+void invertirdigitos(int vec[],int tam);
+void cargarvecB(int vecA[],int vecB[],int tam);
+void cargarvecC(int vecB[]);
+
+void main()
+{
+	int vecA[MAX], vecB[MAX], cantidad;
+
+	cout<<"Ingrese la cantidad de valores que ingresara."<<endl;
+	cin>>cantidad;
+	
+	cargar(vecA,cantidad);
+
+	invertirdigitos(vecA,cantidad);
+
+	cargarvecB(vecA,vecB,cantidad);
+
+	cargarvecC(vecB);
+
+	mostrar(vecB,cantidad);
+
+	getch();
+}
+
+void cargar(int vec[],int tam)
+{
+	for(int i=0;i<tam;i++)
+	{
+		do{
+			cout<< "Ingrese el valor para vec["<< i << "]=";
+			cin>> vec[i];
+		}while (vec[i]>1000);
+	}
+}
+
+void mostrar(int vec[],int tam)
+{   
+	for(int i=0;i<tam;i++)
+	{
+		cout<< "vec["<< i << "]=";
+		cout<< vec[i]<<endl;
+	}
+}
+
+void invertirdigitos(int vec[],int tam)
+{
+	int elemento=0, dig=0;
+	for(int i=0;i<tam;i++)
+		{
+			elemento = vec[i];
+			vec[i]=0;
+			while(elemento>0)
+			{
+				dig = elemento%10;
+				elemento = elemento/10;
+				vec[i] = vec[i]*10+dig;
+			}
+	}
+}
+
+void cargarvecB(int vecA[],int vecB[],int tam)
+{
+	int posVector=-1, elemento=0 , dig=0;
+
+	for(int i=0;i<tam;i++)
+		{
+			elemento = vecA[i];
+			while(elemento>0)
+				{
+					dig = elemento%10;
+					elemento = elemento/10;
+					posVector++;
+					vecB[posVector] = dig;
+
+			}
+	}
+}
+
+void cargarvecC(vecB[])
+{
+
+}
+
+

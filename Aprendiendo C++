@@ -1,0 +1,660 @@
+
+#include "stdafx.h"
+#include "conio.h"
+#include "stdlib.h"
+#include "stdio.h"
+#include <iostream>
+#include "string.h"
+
+using namespace std;
+
+//PARTE DE FUNCIONES
+void teoriavectores();
+void preguntavector();
+void preguntavector1();
+void preguntavector2();
+void preguntavector3();
+void TeoriaFunciones();
+void Teoria_Funciones1 ();
+int EjemploFunciones(int a, int b);
+void PreguntaFunciones();
+void TeoriaIntroduccion();
+void EjemploIntroduccion();
+void PreguntaIntroduccion();
+void TeoriaIf();
+void EjemploIf();
+void PreguntaIf();
+void TeoriaIfelse();
+void EjemploIfelse();
+void PreguntaIfelse();
+void TeoriaSwitch();
+void EjemploSwitch();
+void PreguntaSwitch();
+void Teoriadowhile();
+void Ejemplodowhile();
+void Preguntadowhile();
+void Teoriawhile();
+void Ejemplowhile();
+void Preguntawhile();
+void Teoriafor();
+void Ejemplofor();
+void Preguntafor();
+
+void main ()
+{int decision;
+	do{system("color 0F");
+	cout<<("Bienvenido a: Tu manual Rapido de c++")<<endl;
+	cout<<"elija una opcion:"<<endl;
+	cout<<"1.- Introduccion a c++"<<endl<<"2.- Condicionales I (if)"<<endl<<"3.- Condicionales II (else)"<<endl<< "4.- condionales III (switch)"<<endl<<"5.- Estructuras de repeticion I [do{}while()]"<<endl<< "6.- Estructuras de repeticion II [while()]"<<endl<<"7.- Estructuras de repeticion III [for()]"<<endl<<"8.- Introduccion a las Funciones"<<endl<<"9.-Vectores I (definicion) "<<endl<<"10.- Vectores II (funciones utiles en un vector)"<<endl<<"11.- Salir"<<endl;
+	do{cin>>decision;}while(decision<0||decision>11);
+	switch(decision)
+		{case 1: cout<<"-----BIENVENID@ AL MANUAL DE PROGRAMACION-----"<<endl;
+	cout<<"Para poder programar en C++ se deben conocer conceptos basicos de "<<endl;
+	cout<<"estructura y formulacion, "<<endl;
+	cout<<"posteriormente aprenderemos condicionales, comandos de repeticion, funciones, vectores y mas."<<endl;
+	cout<<"C++ es algo así como la evolución del lenguaje C. La intención de su creación fue el extender al exitoso " <<endl;
+	cout<<"lenguaje de programación C con mecanismos que permitan la manipulación de objetos. En ese sentido, desde "<<endl;
+	cout<<"el punto de vista de los lenguajes orientados a objetos, el C++ es un lenguaje híbrido."<<endl;
+	cout<<"         "<<endl;
+	cout<<" 1. Introduccion al C++ " <<endl;
+	cout<<"En esta leccion veremos la importancia del uso de las diferentes librerias, operadores y tipos de variables.  "<<endl;
+	system("pause");
+	TeoriaIntroduccion();
+	system("pause");
+	system("cls");
+	cout<<"Ejemplo1:"<<endl<<"El ejemplo de este programa sirve para calcular perimetro, area y volumen de una circunferencia, ingresando de dato el diametro."<<endl;
+	cout<< "#include ""stdafx.h""" <<endl<< "#include ""stdlib.h"""<<endl<<"#include ""iostream"""<<endl<<"#include ""math.h"""<<endl<<"#include ""conio.h"""<<endl<<"using namespace std;"<<endl<<"void main() {"<<endl<<
+		"float A, D, P, V;"<<endl<<"cout<< ""Ingrese el Diametro:"""<<endl<<"cin>>  D;  // Realiza la lectura de el diametro."<<endl<<"if (D > 0) { // If es una condicional que hara que calcule todo lo que se pide en la orden si el D es positivo."<<endl<<"A = (3.1416) * (D / 2)* (D /2); //Calculo de Area. "<<endl<<"P = (3.1416) * D; //Calculo de Perimetro."<<endl<<"V = (4 * 3.1416* D* D* D) / 3; //Calculo de volumen."<<endl<<
+	"cout << ""El Area es:"""<< "<< A << endl;"<<endl<<"cout << ""El Perimetro es:"""<< "<< P << endl;"<<endl<<"cout << ""El Volumen es:""" "<< V << endl;"<<endl<<"}"<<endl<<"else {"<<endl<<"cout << ""Diametro no valido""" "<< endl;"<<endl<<"}"<<endl<<
+	"_getch();"<<endl<<"}"<<endl;
+	system("pause");
+	system("cls");
+	cout<<"A continuacion se ejecutara el programa: "<<endl;
+	EjemploIntroduccion();
+	system("pause");
+	system("cls");
+	PreguntaIntroduccion();
+	system ("pause");
+	system("cls");
+			break;
+		case 2: TeoriaIf();
+				system("pause");
+				system("cls");
+				cout<<"Ejemplo2:"<<endl<<"El ejemplo de este programa sirve para definir si es correcta o incorrecta una operacion matematica basica."<<endl;
+				cout<<"#include ""iostream"""<<endl<<"using namespace std;"<<endl<<"int main()"<<endl<<"{"<<endl<<"int resultado = 0;"<<endl<<"cout << ""Cuanto es (15+35)/10?"""<<";"<<endl<<"cin >> resultado; //CIN hace la lectura del numero que el operador ingrese."<<endl<<"if(resultado == (15+35)/5)  //Se escribe la condicion dentro del parentesis."<<endl<<
+				"{"<<endl<<"cout << ""Respuesta Correcta. Felicitaciones!"""<<"endl;"<<endl<<"}"<<endl<<"system(" "PAUSE"<< ");"<<endl<<"}"<<endl;
+				system("pause");
+				system("cls");
+				cout<<"A continuacion se ejecutara el programa: "<<endl;
+				EjemploIf();
+				system("pause");
+				system("cls");
+				PreguntaIf();
+				system ("pause");
+				system("cls");
+			break;
+		case 3: TeoriaIfelse();
+					system("pause");
+					system("cls");
+					cout<<"Ejemplo3:"<<endl<<"El ejemplo de este programa sirve para deducir el salario neto de un trabajador a partir de las horas que trabajo al mes y "<< 
+					"el precio por hora. Sabiendo que se descuenta un impuesto RC-IVA de 13% sobre el salario bruto a  los trabajadores que ganan más de 8.240"<<endl
+					<<"bolivianos(4 salarios minimos)."<<endl<<"{int horas; //Usamos INT para numeros enteros."<<endl<<"FLOAT precio,monto,descuento, total;  // Usamos float para numeros decimales"<<endl<<"cout<<"<< "Ingrese horas trabajadas:"""<<";"<<endl<<"cin>> horas;"<<endl<<"cout<<"<< """Ingrese precio por hora trabajada: ""<<;"<<endl<< "cin>> precio;"<<endl<<
+					"monto= precio*horas;"<<endl<<"if (monto>8272)"<<endl<<"{descuento= monto*0.13;"<<endl<<"total= monto - descuento;"<<endl<<"cout<<"<<"""el salario neto, con descuento es:"""<<"<<"<< "total"<<";"<<endl<<"}"<<endl<<"else "<<endl<<"{total=monto;"<<endl<< 
+					"cout<<"<<""" no tiene descuento, su salario neto es:"" "<<"<< total"<<";"<<endl<<"}"<<endl<<"getch();"<<endl<<"}"<<endl;
+					system("pause");
+					system("cls");
+					cout<<"A continuacion se ejecutara el programa: "<<endl;
+					EjemploIfelse();
+					system("pause");
+					system("cls");
+					PreguntaIfelse();
+					system ("pause");
+					system("cls");
+
+			break;
+		case 4: TeoriaSwitch();
+						system("pause");
+						system("cls");
+						cout<<"Ejemplo4:"<<endl<<"El ejemplo de este programa pide un número del 1 al 7 y con respecto a el, te dice el día de la semana correspondiente."<<endl;
+						cout<<"void main(){"<<endl<<"int opc; //Definimos opcion."<<endl<<"do{"<<endl<<"cout<<"<<"""Introduce un numero del 1 al 7: """<<"<<endl;"<<endl<<"cin>>opc;"<<endl<<"}while((opc<1 || opc>7) ); "<<endl<<"switch(opc){"<<endl<<"case 1: cout<<"<<"""Lunes"""<<"<<endl;"<<endl<<
+						"break;"<<endl<<"case 2:"<<endl<<"cout<<"<<"""Martes"""<<"<<endl; " <<endl<<"break;"<<endl<<"case 3:"<< "cout<<"<< """Miercoles """<<"<<endl;"<<endl<<"break;""case 4:"<<endl<<" cout<<"<< """Jueves """<<"<<endl;"<<endl<<"break;"<<endl<<"case 5:"<<endl<<" cout<<"<< 
+						"""Viernes"""<<"<<endl;"<<endl<< "break;"<<endl<<"case 6:" <<endl<<"cout<<"<< """Sabado """<<"<<endl;"<<endl<<"break;"<<endl<<"case 7:"<<endl<< "cout<<"<< """Domingo """<<"<<endl;"<<endl<<"break;"<<endl<<"getch();"<<endl<<"}"<<endl<<"}"<<endl;
+						system("pause");
+						system("cls");
+						cout<<"A continuacion se ejecutara el programa: "<<endl;
+						EjemploSwitch();
+						system("pause");
+						system("cls");
+						PreguntaSwitch();
+
+system("pause");
+			break;
+		case 5: Teoriadowhile();
+cout<<"El ejemplo de este programa sirve para mostrar la Sumatoria de los numeros del 1 al 5"<<endl<<"Ejemplo"<<endl<<"int S=0,a=1;"<<endl<<"do{"<<endl<<"S=S+a;"<<endl<<"a++;"<<endl<<"}while(a<=5)"<<endl<<"cout<<S<<endl"<<endl;
+cout<<"A continuacion se ejecutara un programa para hallar la sumatoria de numeros desde el 1, hasta el que tu prefieras"<<endl;
+system("pause");
+Ejemplodowhile();
+system("pause");
+system("cls");
+Preguntadowhile();
+system ("pause");
+system("cls");
+			break;
+		case 6: Teoriawhile();
+cout<<"Ejemplo"<<endl<<"int S=0,a=1;"<<endl<<"while(a<=5){"<<endl<<"S=S+a;"<<endl<<"a++;"<<endl<<"}"<<endl<<"cout<<S<<endl;"<<endl<<"El ejemplo de este programa sirve para mostrar la Sumatoria de los numeros del 1 al 5, al igual que el anterior"<<endl;
+cout<<"A continuacion se ejecutara un programa para hallar la sumatoria de numeros desde el 1, hasta el que tu prefieras"<<endl;
+system("pause");
+Ejemplowhile();
+system("pause");
+system("cls");
+Preguntawhile();
+system ("pause");
+system("cls");
+			break;
+		case 7: Teoriafor();
+cout<<"Ejemplo"<<endl<<"For(int a=0;a<limitante;a++)"<<endl<<"La primera posicion es la definicion de la variable a usar como contador"<<endl<<"La segunda posicion indica el valor que debe alcanzar la variable para terminar la repeticion."<<endl<<"La tercera posicion es la cantidad en la que aumentara la variable una vez realizado el proceso"<<"{S=S+a} "<<"Entre corchetes se escribira las acciones a realizar "<<endl<<"El ejemplo de este programa sirve para mostrar la Sumatoria de los numeros del 1 al que tu desees, al igual que el anterior"<<endl;
+cout<<"A continuacion se ejecutara un programa para hallar la sumatoria de numeros desde el 1, hasta el que tu prefieras"<<endl;
+system("pause");
+Ejemplofor();
+system("pause");
+system("cls");
+Preguntafor();
+system("pause");
+system("cls");
+			break;
+		case 8: TeoriaFunciones();
+			Teoria_Funciones1();
+			break;
+		case 9:teoriavectores();
+system("pause");
+system("cls");
+preguntavector();
+system("cls");
+			break;
+		case 10: system("color 0F");
+			cout<< "Con lo que sabemos del for, que hace los siguientes algoritmos?"<<endl;
+			system("pause");
+			system("color 0F");
+preguntavector1();
+system("cls");
+system("color 0F");
+preguntavector2();
+system("cls");
+system("color 0F");
+preguntavector3();
+system("cls");
+			break;
+	   }
+	}while(decision !=11);
+	cout<<"Espero haya sido una informacion util ;v"<<endl;
+	getch();
+	}
+
+void TeoriaIntroduccion()
+{system("color 0F");
+	cout<<"En C++, se conoce como librerías a cierto tipo de archivos que podemos incluir en "<<endl; 
+cout<<"nuestro programa, nos permitenllevar a cabo diferentes tareas sin necesidad de preocuparnos"<<endl;
+cout<<" por cómo se hacen sino simplemente entender cómo usarlas."<<endl;
+cout<<"        "<<endl;
+cout<<"Sintaxis para declarar Librerías en C++"<<endl;
+cout<<"        "<<endl;
+cout<<"Se debe hacer al principio de todo nuestro código,debemos indicarle al compilador que" <<endl;
+cout<<"librerías usar, para el saber que términos estaran correctos en la escritura de "<<endl;
+cout<<"nuestro código y cuáles no. La sintaxis es la siguiente: #include <nombre de la librería>"<<endl;
+cout<<"o alternativamente #include ""nombre de la librería"". "<<endl;
+cout<<"IOSTREAM: contiene los algoritmos estándar de entrada y salida , es quizá la más usada e importante."<<endl;
+cout<<"Nos permitirá hacer uso del cin y el cout para obtener o imprimir valores por pantalla"<<endl;
+cout<<"MATH: Contiene los prototipos de las funciones y otras definiciones para el uso y manipulación de "<<endl;
+cout<<"funciones matemáticas."<<endl;
+cout<<"Librería STDLIB: Contiene los prototipos de las funciones, macros, y tipos para utilidades de uso general."<<endl;
+cout<<"using namespace std; : esta línea nos ayuda a declarar un espacio de nombre que evita tener que usarlo "<<endl;
+cout<<"cada que accedemos a alguna función especifica de una librería. "<<endl;
+cout<<"STRING: una generalización de las cadenas alfanuméricas para albergar cadenas de objetos. "<<endl;
+}
+void EjemploIntroduccion(){
+	float A, D, P, V;
+	cout<< "Ingrese el Diametro: "<<endl;
+	cin>>  D;
+	if (D > 0) {
+		A = (3.1416) * (powf((D / 2), 2));
+		P = (3.1416) * D;
+		V = (4 * 3.1416*powf((D), 3)) / 3;
+		cout << "El Area es:" << A << endl;
+		cout << "El Perimetro es:" << P << endl;
+		cout << "El Volumen es:" << V << endl;
+	}
+	else {
+		cout << "Diametro no valido" << endl;
+	}
+	_getch();
+}
+void PreguntaIntroduccion()
+{int respuesta;
+cout<<"Ahora una pregunta sobre tus conocimientos"<<endl<<"¿Donde deben colocarse las librerias?"<<endl<<"1. Al final del programa "<<endl<<"2. Al comienzo del programa. "<<endl<<"3. No se las debe colocar."<<endl;
+cout<<"Ingresa tu opcion"<<endl;
+cin>>respuesta;
+	if(respuesta==2)
+	{system("color 2F");
+	cout<<"Felicidades, su respuesta es correcta,continuemos a la siguiente estructura."<<endl;
+	system("pause");
+	}else
+	{system("color 4F");
+	cout<<"Respuesta incorrecta, no te preocupes... ¡leamos nuevamente la teoria!"<<endl;
+	system("pause");
+	TeoriaIntroduccion();
+	cout<<"Ahora sigamos a la siguiente estructura"<<endl;
+	}
+}
+
+void TeoriaIf(){
+	system("color 0F");
+
+cout<<"IF" <<endl; 
+cout<<"Los condicionales if, son una estructura de control condicional, que nos permiten tomar cierta"<<endl; 
+cout<<"decisión al interior de nuestro algoritmo, es decir, nos permiten determinar que acciones a tomar "<<endl;
+cout<<"	dada condición."<<endl;
+cout<<"	Veamos:"<<endl;
+cout<<"if(condición a evaluar) {"<<endl;
+cout<<  "Bloque de Instrucciones si se cumple la condición...."<<endl;
+cout<<        "...."<<endl;
+cout<<"}"<<endl;
+cout<<"Bloque de Instrucciones restante DEL ALGORITMO...."<<endl;
+cout<<"..."<<endl;
+cout<<"}"<<endl;
+}
+void EjemploIf(){
+int resultado = 0;
+	cout <<"Cuanto es (15+35)/10?"<<endl;
+	cin >> resultado;
+	if(resultado == (15+35)/5)
+	{cout << "Respuesta Correcta. Felicitaciones!"<<endl;
+	}
+	else
+	{cout<<"respuesta incorrecta";}
+	}
+void PreguntaIf()
+{int respuesta;
+cout<<"Ahora una pregunta sobre tus conocimientos:"<<endl<<"¿Cual es la funcion de la condicional If?"<<endl<<"1. Tomar cierta decisión al interior de nuestro algoritmo."<<endl<<
+"2. Es una estructura de repeticion. "<<endl<<"3. Mostrar el programa."<<endl;
+cout<<"Ingresa tu opcion"<<endl;
+cin>>respuesta;
+	if(respuesta==1)
+	{system("color 2F");
+	cout<<"Felicidades, su respuesta es correcta,continuemos a la siguiente estructura."<<endl;
+	system("pause");
+	}else
+	{system("color 4F");
+	cout<<"Respuesta incorrecta, no te preocupes... ¡leamos nuevamente la teoria!"<<endl;
+	system("pause");
+	TeoriaIf();
+	cout<<"Ahora sigamos a la siguiente estructura"<<endl;
+	}
+}
+
+void TeoriaIfelse()
+{
+	system("color 0F");
+
+	cout<<"IF ELSE"<<endl;
+cout<<"Nos permite definir una condición que se debe cumplir y de acuerdo a su cumplimiento o no "<<endl;
+ cout<<"tomar una acción correspondiente. Similar a la del condicional if, pero adicionando una nueva "<<endl;
+cout<<"estructura que es el else, el cual indica la acción o conjunto de acciones a llevar a cabo, "<<endl;
+cout<<"en caso de que la condición del if no se cumpla. Cabe resaltar que el else siempre se pone "<<endl;
+cout<<"inmediatamente después del if, en caso de ser necesario, el else es incapaz de funcionar por sí solo,"<<endl;
+cout<<"siempre debe ir acompañado por un if."<<endl;
+cout<<"	Veamos:"<<endl;
+cout<<"if (condición a evaluar) "<<endl;
+cout<<"	{"<<endl;
+cout<<"    Bloque de Instrucciones si se cumple la condición...."<<endl;
+ cout<<"		.... "<<endl;
+cout<<" }"<<endl;
+cout<<"			else"<<endl;
+cout<<"				{"<<endl;
+ cout<<"				...."<<endl;
+ cout<<"			Bloque de Instrucciones si NO se cumple la condición...."<<endl;
+ cout<<"				 ...."<<endl;   
+cout<<"}"<<endl;
+}
+void EjemploIfelse(){
+int horas;
+float precio,monto,descuento, total;
+	cout<< "Ingrese horas trabajadas: ";
+	cin>> horas;
+	cout<< "Ingrese precio por hora trabajada: ";
+	cin>> precio;
+
+	monto= precio*horas;
+
+	if (monto>8272)
+		{descuento= monto*0.13;
+			total= monto - descuento;
+	    cout<<"El salario neto, con descuento es: "<< total;
+	    }
+	else 
+	    {total=monto;
+		 cout<<" No tiene descuento, su salario neto es: "<< total;
+	    }
+		 getch();
+}
+void PreguntaIfelse(){
+int respuesta;
+cout<<"Ahora una pregunta en base a tus conocimientos"<<endl<<"¿El Else puede trabajar por si solo?"<<endl<<"1.Por supuesto, es un condicional bastante independiente."<<endl<<
+	"2.Debe trabajar siempre con el IF y se lo coloca luego de aquel."<<endl<<"3.Siempre debe ir acompañado de un cout y cin."<<endl;
+cout<<"Ingresa tu opcion"<<endl;
+cin>>respuesta;
+if(respuesta==2)
+{system("color 2F");
+cout<<"Felicidades, su respuesta es correcta,continuemos a la ultima estructura de repeticion."<<endl;
+system("pause");
+}else
+{system("color 4F");
+cout<<"Respuesta incorrecta, no te preocupes; leamos nuevamente la teoria"<<endl;
+system("pause");
+TeoriaIfelse();
+cout<<"¡Ahora sigamos a la ultima condicional!"<<endl;
+}
+}
+
+void TeoriaSwitch(){
+	system("color 0F");
+cout<<"Permite definir múltiples casos que puede llegar a cumplir una variable cualquiera, y qué acción "<<endl;
+cout<<"tomar en cualquiera de estas situaciones. Incluso es posible determinar qué acción llevar a cabo " <<endl;
+cout<<" en caso de no cumplir ninguna de las condiciones dadas."<<endl;
+cout<<" Veamos a continuación la estructura general de un condicional Switch:"<<endl;
+cout<< "switch(opción)"<<endl;
+cout<<"{"<<endl;
+cout<< "case valor1: (Bloque de instrucciones 1;)"<<endl;
+cout<< "				break;"<<endl;
+cout<< "case valor2: (Bloque de instrucciones 2;)"<<endl;
+cout<< "				break;"<<endl;
+cout<< "case valor3: (Bloque de instrucciones 3;)"<<endl;
+cout<<"					break;"<<endl;
+cout<<" (Nótese que valor 1 2 y 3 son los valores que puede tomar la opción"<<endl;
+cout<<" la instrucción break es necesaria, para no ejecutar todos los casos.)"<<endl;
+cout<<"     "<<endl;
+cout<<"    default:      //Bloque de instrucciones por defecto;"<<endl;
+cout<<"                 //default, es el bloque que se ejecuta en caso de que no se de ningún caso"<<endl;
+cout<<"}"<<endl;
+}
+void EjemploSwitch(){
+int opc;
+do{
+cout<<"Introduce un numero del 1 al 7:"<<endl;
+ cin>>opc;
+ }while((opc<1 || opc>7) );
+	switch(opc){
+	case 1: cout<<"Lunes"<<endl;
+	break;
+	case 2:
+	cout<<"Martes"<<endl; 
+	break;
+	case 3:
+	cout<<"Miercoles"<<endl;
+	break;
+	case 4:
+	cout<<"Jueves "<<endl;
+	break;
+	case 5:
+	cout<<"Viernes"<<endl;
+	break;
+	case 6:
+	cout<<"Sabado "<<endl; 
+	break;
+	case 7:
+	cout<<"Domingo"<<endl;
+	break;
+	getch();
+		}
+}
+void PreguntaSwitch()
+{	int Respuesta;
+cout<<"¿Que nos permite la condicional Switch?"<<endl;
+cout<<"1.Permite comparar varios casos y mostrar solo el erroneo."<<endl<<"2.Permite salirse del programa mediante opciones."<<endl
+	<<"3.Permite definir múltiples casos que puede llegara cumplir una variable cualquiera, y qué acción tomar en cualquieradeterminar qué acción llevar a cabo en caso de no cumplir ninguna de las condiciones dadas."<<endl;
+cin>>Respuesta;
+if(Respuesta==3)
+{system("color 2F");
+cout<<"Felicidades, concluiste con la parte de condicionales."<<endl;
+system("pause");
+}
+else
+{ system("color 4F");
+	cout<<"Oh oh mejor veamos la teoria de nuevo"<<endl;
+	system("pause");
+	TeoriaSwitch();
+}
+}
+
+void Teoriadowhile()
+{system("color 0F");
+cout<<"Existen 3 tipos de estructuras de repeticion, se detalla a continuacion su estructura base y uso."<<endl<<"1. Primer tipo"<<endl<<"do{S=S+1;} //Se establece dentro de la funcion do, todas las acciones a realizar en este proceso"<<endl<<"while(Dentro de este parentesis se debera escribir la condicion que debe ser cumplida para que la repeticion se finalice);"<<endl<<" Posdata.- No olvides el punto y coma luego de tu while ;)"<<endl;
+}
+void Ejemplodowhile()
+{int S=0,a=1,limite;
+cout<<"Ingrese el numero limite de la Sumatoria"<<endl;
+cin>>limite;
+do{
+	S=S+a;
+	a++;
+}while(a<=limite);
+cout<<"El valor de la Sumatoria es: "<<S<<endl;
+cout<<"Si deseas consultar la estructura de este pequeño programa, "<<endl<<"busca la funcion Ejemplodowhile, en las lineas de este programa"<<endl;
+}
+void Preguntadowhile()
+{int respuesta;
+cout<<"Ahora una pregunta sobre tus conocimientos"<<endl<<"¿Que debe especificarse dentro de los corchetes, de un estructura do while?"<<endl<<"1.La condicion que limita el programa"<<endl<<"2.Las librerias"<<endl<<"3.Las acciones a realizar hasta que la condicion se cumpla"<<endl;
+cout<<"Ingresa tu opcion"<<endl;
+cin>>respuesta;
+if(respuesta==3)
+{system("color 2F");
+cout<<"Felicidades, su respuesta es correcta,continuemos a la siguiente estructura."<<endl;
+system("pause");
+}else
+{system("color 4F");
+cout<<"Respuesta incorrecta, no te preocupes; leamos nuevamente la teoria"<<endl;
+system("pause");
+Teoriadowhile();
+cout<<"Ahora sigamos a la siguiente estructura"<<endl;
+}
+}
+void Teoriawhile()
+{system("color 0F");
+cout<<"Ahora veremos la estructura while, la cual tratara de repetir una accion,"<<endl<<"comprobando una condicional antes de realizar el proceso, "<<endl<<"a diferencia del do while,e que realiza la accion antes de"<<endl<<"comprobar la condicion nuevamente, sabemos que suena un poco confuso, "<<endl<<"el siguiente ejemplo te servira para despejar las dudas"<<endl;
+}
+void Ejemplowhile()
+{int limite,S=0,a=1;
+cout<<"Ingrese el numero limite de la Sumatoria"<<endl;
+cin>>limite;
+while(a<=limite){
+	S=S+a;
+	a++;
+}
+cout<<"El valor de la Sumatoria es: "<<S<<endl;
+cout<<"Si deseas consultar la estructura de este pequeño programa, busca la funcion Ejemplowhile, en las lineas de este programa"<<endl;
+} 
+void Preguntawhile()
+{int respuesta;
+cout<<"Ahora una pregunta sobre tus conocimientos"<<endl<<"¿Que debe especificarse dentro de los parentesis, de un estructura while?"<<endl<<"1.La condicion que limita el programa"<<endl<<"2.Las variables a usar"<<endl<<"3.Las acciones a realizar en la funcion"<<endl;
+cout<<"Ingresa tu opcion"<<endl;
+cin>>respuesta;
+if(respuesta==1)
+{system("color 2F");
+cout<<"Felicidades, su respuesta es correcta,continuemos a la ultima estructura de repeticion."<<endl;
+system("pause");
+}else
+{system("color 4F");
+cout<<"Respuesta incorrecta, no te preocupes; leamos nuevamente la teoria"<<endl;
+system("pause");
+Teoriawhile();
+cout<<"Ahora sigamos a la ultima estructura de repeticion"<<endl;
+}
+}
+
+void Teoriafor()
+{
+cout<<"La ultima estructura de repeticion de este programa es el for,"<<endl<<" el cual nos facilitara mucho el trabajo posterior con vectores,"<<endl<<" por razones que veremos mas adelante,"<<endl<<" se caracteriza por la facilidad con la que permite "<<endl<<"aumentar uniformemente el valor de una variable"<<endl;
+}
+void Ejemplofor()
+{int limite,S=0;
+cout<<"Ingrese el numero limitante"<<endl;
+cin>>limite;
+for(int a=0;a<=limite;a++)
+{
+S=S+a;
+}
+cout<<"La sumatoria es:  "<<S<<endl;
+}
+void Preguntafor()
+{int respuesta;
+cout<<"Ahora una pregunta sobre tus conocimientos"<<endl<<"¿Que debe especificarse en la primera posicion del parentesis de la estructura for?"<<endl<<"1.La condicion que limita el programa"<<endl<<"2.La variable a emplear"<<endl<<"3.Las acciones a realizar en la funcion"<<endl;
+cout<<"Ingresa tu opcion"<<endl;
+cin>>respuesta;
+if(respuesta==2)
+{system("color 2F");
+cout<<"Felicidades, su respuesta es correcta, hemos concluido las estructuras de repeticion."<<endl;
+system("pause");
+}else{system("color 4F");
+cout<<"Respuesta incorrecta, no te preocupes; leamos nuevamente la teoria"<<endl;
+system("pause");
+Teoriafor();
+}
+}
+void TeoriaFunciones()
+{system("color 2F");
+cout<<"Las Funciones son recursos muy valiosos para realizar complejos programas"<<endl<<"Existen dos tipos: Por valor, Por referencia"<<endl<<"Solo trataremos las funciones por valor en esta ocasion"<<endl<<"Una funcion por valor debe estar compuesta por el nombre de la misma, y entre parentesis, se escriben las variables que se envian a la funcion para que trabaje"<<"La funcion debe ser especificada debajo de las librerias"<<"Y las acciones que realiza, debajo del programa principal cerrado"<<endl<<"Si se quiere que la funcion no devuelva un resultado al programa principal, sera de tipo void, si se desea que si lo haga puede ser de tipo float o int"<<endl;
+}
+void Teoria_Funciones1()
+{int a,b,S;
+cout<<"Programa Princial: S=Suma(a, b);"<<"Seccion Librerias: int Suma(int a,int b)"<<endl<<"Seccion Fuera del Programa Principal:int Suma(int a, int b){"<<endl<<"S=a+b;"<<endl<<"return S}"<<endl;
+cout<<"El siguiente programa se ejecuta gracias a funciones, como el programa en el que te encuentras actualmente, sigue para ver un ejemplo practico"<<endl;
+system("pause");
+cout<<"Ingrese un numero"<<endl;
+cin>>a;
+cout<<"Ingrese un segundo numero"<<endl;
+cin>>b;
+S=EjemploFunciones(a,b);
+cout<<"La suma de los dos numeros es: "<<S<<endl;
+system("pause");
+system("cls");
+PreguntaFunciones();
+system("pause");
+system("cls");
+}
+
+int EjemploFunciones(int a, int b)
+{int S;
+	S=a+b;
+return (S);
+}
+void PreguntaFunciones()
+{
+int Respuesta;
+cout<<"Dentro de una funcion en la ubicacion de las librerias, que se debe especificar en las variables del parentesis?"<<endl;
+cout<<"1.El tipo de parametros enviados"<<endl<<"2.La accion a realizar."<<endl<<"3.Las librerias"<<endl;
+cin>>Respuesta;
+if(Respuesta==1)
+{system("color 2F");
+cout<<"Felicidades, concluiste esta pequeña introduccion a Funciones"<<endl;
+system("pause");
+}
+else
+{system("color 4F");
+cout<<"Oh oh mejor veamos la teoria de nuevo"<<endl;
+system("pause");
+TeoriaFunciones();
+}
+}
+void teoriavectores()
+{system("color 0F");
+cout<<"Un vector es un puntero. algo que te señala "<<endl<<"un lugar donde guardar la variable, pero en este se consideran una cantidad de casillas "<<endl<<" que pertenecen a un mismo conjunto"<<endl;
+cout<< "existen dos formas de definir el vector, de forma dinamica o de forma estatica:"<<endl;
+cout<< "Al definir un vector de forma estatica, "<<endl<<"se define en un principio la variable del tamaño del vector,"<<endl<<"(ejemplo: int s[100] o int s[n], cuando en donde las librerias se puso (numeral) define N 100)"<<endl<<" este de hace con un ,#define variable tamaño o se d"<<endl<<"y en dnde se define las incognitas, se coloca directamente vector[n]"<<endl;
+cout<<"en cambio de forma dinamica"<<endl<<"se define la incognita del tamaño, y el vector como puntero (*)"<<endl<<". Se lee el tamaño del vector, y para definir se coloca:"<<endl<<"(nombre)= new (tipo de vectot);"<<endl;
+}
+void preguntavector()
+{int t;
+	cout<<"Al definir el vector de manera estatica, se define la variable del vector como puntero?"<<endl<<"1. verdadero"<<endl<<"2.Falso"<<endl<<"ambas son correctas"<<endl;
+cin>>t;
+if(t==2)
+{system("color 2F");
+cout<<"Felicidades, concluiste esta pequeña introduccion a Funciones"<<endl;
+system("pause");
+}
+else
+{system("color 4F");
+cout<<"Oh oh mejor veamos la teoria de nuevo"<<endl;
+system("pause");
+teoriavectores();
+}
+}
+void preguntavector1()
+{int respuesta;
+cout<<"siendo A[], un vector de c espacios:"<<endl;
+cout<<"for(int a=0;a<c;a++)"<<endl;
+cout<<"{"<<endl;
+cout<<"		cin>>A[a];"<<endl;
+cout<<"}"<<endl;
+cout<<"que produce el algoritmo?"<<endl;
+cout<<"1.Se llena los espacios del vector"<<endl<<"2.se muestra los valores en los espacios del vector"<<endl<<"3.se ordena el vector en orden ascendente"<<endl;
+cout<<"Ingresa tu opcion"<<endl;
+cin>>respuesta;
+if(respuesta==1)
+{system("color 2F");
+cout<<"Felicidades, su respuesta es correcta."<<endl;
+system("pause");
+}else{system("color 4F");
+cout<<"Respuesta incorrecta, no te preocupes"<<endl;
+system("pause");
+cout<<"respuesta correcta 1"<<endl;
+system("pause");
+}
+}
+void preguntavector2()
+{int respuesta;
+cout<<"siendo A[], un vector de c espacios:"<<endl;
+cout<<"for(int a=0;a<c;a++)"<<endl;
+cout<<"{"<<endl;
+cout<<"		cout<<A[a];"<<endl;
+cout<<"}"<<endl;
+cout<<"que produce el algoritmo?"<<endl;
+cout<<"1.Se llena los espacios del vector"<<endl<<"2.se muestra los valores en los espacios del vector"<<endl<<"3.se ordena el vector en orden ascendente"<<endl;
+cout<<"Ingresa tu opcion"<<endl;
+cin>>respuesta;
+if(respuesta==2)
+{system("color 2F");
+cout<<"Felicidades, su respuesta es correcta."<<endl;
+system("pause");
+}else{system("color 4F");
+cout<<"Respuesta incorrecta, no te preocupes"<<endl;
+system("pause");
+cout<<"respuesta correcta 2"<<endl;
+system("pause");
+}
+}
+void preguntavector3()
+{int respuesta;
+cout<<"siendo A[], un vector de c espacios:"<<endl;
+cout<<"habiendo definido antes un auxiliar aux=0;"<<endl;
+cout<<"for(int a=0;a<c;a++)"<<endl;
+cout<<"{for(int j=a+1;j<c;j++)"<<endl;
+cout<<"  {if(A[a]>A[j])"<<endl;
+cout<<"       {aux=A[a];"<<endl;
+cout<<"        A[a]=A[j];"<<endl;
+cout<<"        A[j]=aux;"<<endl;
+cout<<"  }"<<endl;
+cout<<"}"<<endl;
+cout<<"que produce el algoritmo?"<<endl;
+cout<<"1.Se llena los espacios del vector"<<endl<<"2.se muestra los valores en los espacios del vector"<<endl<<"3.se ordena el vector en orden ascendente"<<endl;
+cout<<"Ingresa tu opcion"<<endl;
+cin>>respuesta;
+if(respuesta==3)
+{system("color 2F");
+cout<<"Felicidades, su respuesta es correcta."<<endl;
+system("pause");
+}else{system("color 4F");
+cout<<"Respuesta incorrecta, no te preocupes"<<endl;
+system("pause");
+cout<<"respuesta correcta 3"<<endl;
+system("pause");
+}
+}

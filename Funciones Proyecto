@@ -1,0 +1,133 @@
+
+
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+
+using namespace std;
+
+void Arreglos();
+void Strings();
+
+void main()
+{
+	int opcion;
+
+	cout<<"Elija una opcion."<<endl;
+	cout<<"1.Arreglos."<<endl;
+	cout<<"2.String."<<endl;
+	cin>>opcion;
+
+	if(opcion==1)
+	{
+		Arreglos();
+	}
+	if(opcion==2)
+	{
+		Strings();
+	}
+	getch();
+}
+
+void Arreglos()
+{
+	cout<<"Un arreglo es utilizado para almacenar informacion; en vez de declarar multiples variables y almacenar datos individuales se puede declarar un solo arreglo para almacenar todas las variables."<<endl;
+	cout<<"Cuando de clares un arreglo especifica el tipo, asi como tambien la cantidad de elementos que tendra."<<endl;
+	cout<<"Ejemplo: "<<endl;
+	cout<<"     int a[5];    "<<endl;
+	cout<<"Esto significa que la variable a fue declarada como un arreglo de 5 valores enteros."<<endl;
+	cout<<"La posicion de los elementos de un arreglo inician desde 0, el segundo elemento se mostrara en la posicion 1 y asi sucesivamente."<<endl;
+	cout<<"Ejemplo: "<<endl;
+	cout<<"       int b[5] = {11,45,62,70,88}"<<endl;
+	cout<<"       b[0]=11     b[1]=45     b[2]=62     b[3]=70     b[4]=88"<<endl;
+	cout<<"1) Cargar elementos en un vector."<<endl;
+	cout<<"Para poder introducir elementos en un arreglo se utiliza el bucle for. Para poder introducir los elementos se debe primeramente introducir cuantos valores ingresaremos en el arreglo."<<endl;
+	cout<<"Ejemplo: "<<endl;
+	cout<<"       int arreglo[5];"<<endl;
+	cout<<"       for(int i=0;i<5;i++)"<<endl;
+	cout<<"           cin>> arreglo[i];"<<endl;			
+	cout<<"En el for la variable i se inicializa en 0 ya que la primer posicion de un arreglo es 0 y se pone de restriccion menor a 5, ya que como inicia en 0 el quinto valor estar en la posicion con el numero 4."<<endl;
+	cout<<"2) Mostrar un Arreglo."<<endl;
+	cout<<"Para mostrar un arreglo se utiliza un for similar al que usamos para cargar elementos en un arreglo."<<endl;
+	cout<<"Ejemplo: "<<endl;
+	cout<<"       int c[5];"<<endl;
+	cout<<"Asumimos que el arreglo ya ha sido cargado."<<endl;
+	cout<<"       for(int i=0;i<5;i++)"<<endl;
+	cout<<"          cout<< c[i]<<endl;"<<endl;
+	cout<<"3) Buscar elementos en un arreglo."<<endl;
+	cout<<"Como las distintas operaciones que se realizan con arreglos utilizaremos un for."<<endl;
+	cout<<"Ejemplo: "<<endl;
+	cout<<"       int d[5];"<<endl;
+	cout<<"Asumiendo que el arreglo esta cargado y tenemos declarada una variable que almacena el numero que deseamos buscar."<<endl;
+	cout<<"       int n=3"<<endl;
+	cout<<"Procedemos a hacer la siguiente operacion."<<endl;
+	cout<<"       for(int i=0;i<5;i++)"<<endl;
+	cout<<"           {"<<endl;
+	cout<<"              if(d[i]==n)"<<endl;
+	cout<<"                 cout<<El numero esta en la posicion: <<i<<"<<endl;
+	cout<<"           }"<<endl;
+}
+
+void Strings()
+{
+	cout<<"Esta funcion nos pernmite trabajar con caracteres de texto, lo contrario a lo anterior avanzado donde solamente usabamos numeros."<<endl;
+	cout<<"Para poder trabajar con esta libreria primeramente debemos introcucir la libreria correspondiente:"<<endl;
+	cout<<"             #include <string>;"<<endl;
+	cout<<"Para poder introducir una cadena de caracteres en un string se procede de la siguiente manera:"<<endl;
+	cout<<"             string frase;"<<endl;
+	cout<<"             cout<<Ingrese su frase: <<endl;"<<endl;
+	cout<<"             getline(cin,frase);"<<endl;
+	cout<<"Entre las operaciones que podemos realizar con la libreia string tenemos: "<<endl;
+	cout<<"1)Cantidad de Caracteres del string."<<endl;
+	cout<<"Para determinar la cantidad de caracteres se procede de la siguiente manera: "<<endl;
+	cout<<"        int longitud;"<<endl;
+	cout<<"        string frase;"<<endl;
+	cout<<"        longitud = frase.length();"<<endl;
+	cout<<"2)Comparar 2 strings."<<endl;
+	cout<<"Para realizar la comparacion se usa la funcion compare."<<endl;
+	cout<<"        string frase, var2;"<<endl;
+	cout<<"        cout<<Ingrese el nombre a buscar.<<endl;"<<endl;
+	cout<<"        getline(cin,var2);"<<endl;
+	cout<<"        if(nombre.compare(var2)==0)"<<endl;
+	cout<<"           cout<< Las frases son iguales.<<endl;"<<endl;
+	cout<<"        else"<<endl;
+	cout<<"           cout<< No son iguales.<<endl;"<<endl;
+	cout<<"3)Sacar parte de un string."<<endl;
+	cout<<"Para realizar esto se usa la funcion substr."<<endl;
+	cout<<"        int longitud, pos;"<<endl;
+	cout<<"        string frase;"<<endl;
+	cout<<"        cout<< Ingrese dede que posicion quiere extraer.<<endl;"<<endl;
+	cout<<"        cin>>pos;"<<endl;
+	cout<<"        longitud = frase.length();"<<endl;
+	cout<<"        cout<< frase.substr(pos,longitud-pos);"<<endl;
+	cout<<"4)Intercambiar string."<<endl;
+	cout<<"Esto se realiza usando la funcion swarp."<<endl;
+	cout<<"        string frase, var2;"<<endl;
+	cout<<"        frase.swarp(var2);"<<endl;
+	cout<<"        cout<<nombre<<endl;"<<endl;
+	cout<<"        cout<<var2<<endl;"<<endl;
+	cout<<"Luego de realizar esto ambas variables habran cambiado sus caracteres."<<endl;
+	cout<<"5)Encontrar Caracteres."<<endl;
+	cout<<"Se realiza utilizando la funcion find."<<endl;
+	cout<<"        int longitud;"<<endl;
+	cout<<"        string var2;"<<endl;
+	cout<<"        cout<<var2.find(a);"<<endl;
+	cout<<"        longitud = var2.lentgh();"<<endl;
+	cout<<"        for(int i=0;i<longitud;i++)"<<endl;
+	cout<<"            if(var2.at(i)==a)"<<endl;
+	cout<<"               cout<<Exsite un espacio en <<i<<endl;"<<endl;
+	cout<<"6)Quitar vocales de un string."<<endl;
+	cout<<"Aplicando los conocimientos adquiridos se procede de la siguiente manera."<<endl;
+	cout<<"        string frase, var2;"<<endl;
+	cout<<"        int longitud, cont=0;"<<endl;
+	cout<<"        var2=frase;"<<endl;
+	cout<<"        longitud = frase.length();"<<endl;
+	cout<<"        for(int i=0;i<longitud;i++)"<<endl;
+	cout<<"            if(frase[i]!='a' && frase[i]!='e' && frase[i]!='i' && frase[i]!='o' && frase[i]!='u')"<<endl;
+	cout<<"               {"<<endl;
+	cout<<"                  var2[cont] = frase[i];"<<endl;
+	cout<<"                  cont++;"<<endl;
+	cout<<"               }"<<endl;
+	cout<<"        cout<<La frase sin vocales es: <<var2<<endl;"<<endl;
+}

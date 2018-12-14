@@ -1,6 +1,4 @@
 
-
-
 #include "stdafx.h"
 #include <iostream>
 #include "conio.h"
@@ -9,6 +7,9 @@ using namespace std;
 
 void Arreglos();
 void Strings();
+void PracticaMatriz();
+void PracticaArreglos();
+void PracticaString();
 
 void main()
 {
@@ -26,6 +27,18 @@ void main()
 	if(opcion==2)
 	{
 		Strings();
+	}
+	if(opcion==3)
+	{
+		PracticaMatriz();
+	}
+	if(opcion==4)
+	{
+		PracticaArreglos();
+	}
+	if(opcion==5)
+	{
+		PracticaString();
 	}
 	getch();
 }
@@ -130,4 +143,102 @@ void Strings()
 	cout<<"                  cont++;"<<endl;
 	cout<<"               }"<<endl;
 	cout<<"        cout<<La frase sin vocales es: <<var2<<endl;"<<endl;
+}
+
+
+void PracticaMatriz()
+{
+cout<<"Bienvenidos al apartado de practicas de funciones en C++"<<endl;
+cout<<"Para que puedas realizar tus codigos en conjuntos a la clase te dejamos un link de un compilador"<<endl;
+cout<<"https://www.onlinegdb.com/online_c++_compiler   Ingresa y comencemos!"<<endl;
+cout<<"-----------------------------------------------------------------------------------------------"<<endl;
+
+system("pause>null");
+system("cls");
+  
+cout<<"Para comenzar podemos practicar como cargar una matriz para poder trabajar cualquier tipo programa. "<<endl;
+cout<<"Primero declaramos las matrices con constantes como tamaño y las cargamos de la siguiente manera."<<endl;
+cout<<"#include <iostream>"<<endl;
+cout<<"#define FILA 20   //constantes para el tamaño de las matrices"<<endl;
+cout<<"#define COLUM 20"<<endl;
+cout<<"                                                "<<endl;
+cout<<"using namespace std; "<<endl;
+cout<<"void main()"<<endl;
+cout<<"{int Matriz[FILA][COLUM];"<<endl;
+cout<<"int n, m;"<<endl;
+cout<<"cout<<'Ingrese tamaño de la matriz( fila y columna)';"<<endl;
+cout<<"cin>>n>>m; "<<endl;
+cout<<"for(int i=0;i<n;i++)"<<endl;
+cout<<" {for(int j=0;j<m;j++)"<<endl;
+cout<<"   {cin>>Matriz[i][j];}"<<endl;
+cout<<" }"<<endl;
+cout<<"//Ahora mostraremos los valores con esta codigo que sigue la misma logica//"<<endl;
+cout<<"for(int k=0;k<n;k++)"<<endl;
+cout<<" {for(int l=0;l<m;l++)"<<endl;
+cout<<"   {cout<<Matriz[i][j];}"<<endl;
+cout<<" }"<<endl;
+cout<<"getch();"<<endl;
+cout<<"}"<<endl;
+cout<<"-------------------------------------------------------------------------------------------"<<endl;
+cout<<"Lo que hacemos es que cuando utilizamos dos 'for' con dos variables diferentes podemos recorrer la matriz de forma ordenada para cargarla o mostrarla."<<endl;
+cout<<"De modo que la primera variable se situa con la 'i'en la fila'0' y el parametro 'j' para recorriendo esa fila. Todo esto tomando en cuanta el tamaño de las filas y columnas de la matriz y usandolas en los 'fors' para saber cuantas veces debemos recorrer la fila o la columna "<<endl;
+cout<<"Podemos darle muchas utilidades a una matriz como: listas de multiples datos, registros contables entre otros"<<endl;
+cout<<"Puedes ver ejercicios para mejorar mas en la seccion de ejercicios de curso"<<endl;
+cout<<"Gracias por practicar con nosotros"<<endl;
+
+system("pause>null");
+system("cls");
+} 
+
+void PracticaArreglos()
+{
+	cout<<"Para iniciar podemos practicar a cargar un arreglo para cualquier tipo de programa que vayamos a realizar."<<endl;
+	cout<<"Primero se procede a declarar el tipo de arreglo y luego declaramos la cantidad de valores que almacenará."<<endl;
+	cout<<"   #include <iostream>"<<endl;
+	cout<<"   #define MAX 100 //Constante para el tamaño del arreglo." <<endl;
+	cout<<"   using namespace std;"<<endl;
+    cout<<"   void main()"<<endl;
+	cout<<"   {"<<endl;
+	cout<<"     int arreglo[MAX], n;"<<endl;
+	cout<<"     cout<<'Ingrese la cantidad de valores que ingresará.'"<<endl;
+	cout<<"     cin>>n;"<<endl;
+	cout<<"     for(int i=0;i<n;i++)"<<endl;
+	cout<<"         {"<<endl;
+	cout<<"           cout<<'Arreglo['<<i<<']= ';"<<endl;
+	cout<<"           cin>>arreglo[i];"<<endl;
+	cout<<"         }"<<endl; 
+	cout<<"//Para mostrar en la pantalla los valores de un arreglo ya cargado se usa la misma logica que se usa para cargar, solo que qesta vez sin usar un cin."<<endl;
+	cout<<"     for(int j=0;j<n;j++)"<<endl;  
+	cout<<"         cout<<'Arreglo['<<j<<']= '<<arreglo[j]<<endl;"<<endl;
+	cout<<"     getch();"<<endl;
+	cout<<"     }"<<endl;
+	cout<<"-------------------------------------------------------------------------------------------"<<endl;
+	cout<<"En la seccion donde se procede a cargar el arreglo se inicia el contador en o ya que la primera posicion en un arreglo tiene el numero 0."<<endl;
+	cout<<"Y en las lineas de codigo donde se da la orden de mostrar el arreglo se procede con la misma logica que al cargar, solamente sin la utilizacion del cin ya que nuestro arreglo ya esta cargado."<<endl;
+	cout<<"Los arreglos pueden ser utilizados para almacenar desde datos contables hasta núemeros telefónicos que luego necesitemos."<<endl;
+	cout<<"Puedes ver ejercicios para mejorar mas en la seccion de ejercicios de curso."<<endl;
+	cout<<"Gracias por practicar con nosotros."<<endl;
+}	
+
+void PracticaString()
+{
+	cout<<"Para poder utilizar la libreria string junto a todas las posiblidades que nos ofrece primeramente debemos ser capaces de poder cargar una variable con caracteres."<<endl;
+	cout<<"Primeramente se debe declarar una variable de tipo string donde se almacenaran los caracteres a ingresar."<<endl;
+	cout<<"   #include <iostream>"<<endl;
+	cout<<"   #include <string>"<<endl;
+	cout<<"   using namespace std;"<<endl;
+	cout<<"   void main()"<<endl;
+	cout<<"   {"<<endl;
+	cout<<"     string frase;"<<endl;
+	cout<<"     cout<<'Ingrese su frase'."<<endl;
+	cout<<"     getline(cin,frase); //En los string se usa getline ya que necesitamos todo lo escrito en esa linea de codigo, entre el parentesis ponemos cin, seguidamente se pone el nombre de la variable que almacenara los caracteres"<<endl;
+	cout<<"     //Luego de haber cargado la variable podemos mostrarla en la pantalla."<<endl;
+	cout<<"     cout<<frase;"<<endl;
+	cout<<"     getch();"<<endl;
+	cout<<"   }"<<endl;
+	cout<<"-------------------------------------------------------------------------------------------"<<endl;
+	cout<<"Al declarar una variable que almacenara caracteres se la debe nombrar string."<<endl;
+	cout<<"Para poder cargar la variable de tipo string se usa el getline(), dado que si solamente pusieramos cin almacenaria los datos hasta donde pongamos un espacio."<<endl;
+	cout<<"En cambio con el getline, todo lo que esta escrito en la linea de codigo se almacena en la variable. Dentro del parentesis del getline se poen cin,(nombre de nuestra variable)."<<endl;
+	cout<<"El manejo de datos tipo string nos sirve para poder almacenar contactos, direcciones, etc."<<endl;
 }
